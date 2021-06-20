@@ -19,8 +19,7 @@ pipeline {
 			}
 		}
 	}
-	}
-
+	
 	stage('Unit Tests') {
 		steps {
 			dir ('exchange-cli') {
@@ -28,4 +27,6 @@ pipeline {
 			}
 		}
 	}
+	} //stages
+
 }
