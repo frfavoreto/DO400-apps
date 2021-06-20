@@ -3,7 +3,7 @@ pipeline {
 		label 'nodejs'
 	}
 	
-	stages {
+      stages {
 	stage ('Install Dependencies') {
 		steps {
 		  dir ('exchange-cli') {
@@ -27,6 +27,14 @@ pipeline {
 			}
 		}
 	}
-	} //stages
+
+	stage('Functional Tests') {
+		steps {
+			dir ('exchange-cli') {
+			  sh "npm run test:functional"
+			}
+		}
+	}
+      } //stages
 
 }
