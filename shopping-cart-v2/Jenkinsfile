@@ -3,6 +3,7 @@ pipeline {
 	agent { label 'maven' }
 	
 	stages {	
+		options { timeout(time: 50, unit: 'SECONDS') }
 		stage('Test') {
 			steps {	
 				dir('shopping-cart-v2') {
