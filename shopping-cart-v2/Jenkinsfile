@@ -28,7 +28,7 @@ pipeline {
 		}
 		
 		stage('Deploy') {
-			environment = { QUAY = credentials('QUAY_USER') }
+			environment { QUAY = credentials('QUAY_USER') }
 			steps { 
 				dir('shopping-cart-v2') {
 				  script {
