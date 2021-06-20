@@ -3,8 +3,8 @@ pipeline {
 	agent { label 'maven' }
 	
 	stages {	
-		options { timeout(time: 50, unit: 'SECONDS') }
 		stage('Test') {
+			options { timeout(time: 50, unit: 'SECONDS') }
 			steps {	
 				dir('shopping-cart-v2') {
 				sh './mvnw clean test'
